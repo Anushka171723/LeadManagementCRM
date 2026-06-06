@@ -1,0 +1,15 @@
+{
+  "name": "lead-management-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack lead management CRM built with React, Node.js, Express, and MongoDB.",
+  "scripts": {
+    "install:all": "npm.cmd install --prefix backend && npm.cmd install --prefix frontend",
+    "dev": "concurrently \"npm.cmd run dev --prefix backend\" \"npm.cmd run dev --prefix frontend\"",
+    "start": "npm.cmd start --prefix backend",
+    "build": "npm.cmd run build --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
