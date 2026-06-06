@@ -104,6 +104,50 @@ Recommended:
 - Backend: Render or Railway
 - Database: MongoDB Atlas
 
+### Backend on Render
+
+Create a new Web Service on Render:
+
+```txt
+Root Directory: backend
+Build Command: npm install
+Start Command: npm start
+```
+
+Add environment variables:
+
+```env
+MONGO_URI=your_mongodb_atlas_connection_string
+CLIENT_URL=https://your-vercel-frontend-url.vercel.app
+```
+
+After deployment, test:
+
+```txt
+https://your-render-backend-url.onrender.com/health
+```
+
+### Frontend on Vercel
+
+Create a new Vercel project:
+
+```txt
+Root Directory: frontend
+Framework Preset: Vite
+Build Command: npm run build
+Output Directory: dist
+```
+
+Add environment variable:
+
+```env
+VITE_API_URL=https://your-render-backend-url.onrender.com/api
+```
+
+After the frontend URL is generated, update `CLIENT_URL` in Render to the Vercel URL and redeploy the backend.
+
+### Important
+
 After deployment, update:
 
 - `CLIENT_URL` in backend environment variables to the deployed frontend URL
